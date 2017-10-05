@@ -1,10 +1,10 @@
 {
-  "name": "@djv/draft-04",
+  "name": "@korzio/djv-draft-04",
   "version": "2.0.0-alpha.0",
   "description": "JSON-Schema draft-04 plugin for djv package",
   "main": "index.js",
   "scripts": {
-    "build": "rollup -i index.js --output.file '@djv/draft-04' --output.format umd --name djvDraft04 -m"
+    "build": "rollup -i index.js --output.file '@korzio/djv-draft-04.js' --output.format umd --name djvDraft04 -m"
   },
   "keywords": [
     "JSON-Schema",
