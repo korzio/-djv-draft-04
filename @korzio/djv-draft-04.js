@@ -5,28 +5,28 @@
 }(this, (function () { 'use strict';
 
 /* eslint no-param-reassign: [2, { "props": false }] */
-const djvDraft04 = ({
-  properties,
-  keywords,
-  validators,
-  formats,
-  keys,
-  transformation,
-}) => {
+var djvDraft04 = function djvDraft04(_ref) {
+  var properties = _ref.properties,
+      keywords = _ref.keywords,
+      validators = _ref.validators,
+      formats = _ref.formats,
+      keys = _ref.keys,
+      transformation = _ref.transformation;
+
   Object.assign(properties, {
-    minimum(schema) {
-      return `%s <${schema.exclusiveMinimum ? '=' : ''} ${schema.minimum}`;
+    minimum: function minimum(schema) {
+      return '%s <' + (schema.exclusiveMinimum ? '=' : '') + ' ' + schema.minimum;
     },
-    maximum(schema) {
-      return `%s >${schema.exclusiveMaximum ? '=' : ''} ${schema.maximum}`;
-    },
+    maximum: function maximum(schema) {
+      return '%s >' + (schema.exclusiveMaximum ? '=' : '') + ' ' + schema.maximum;
+    }
   });
 
   delete properties.exclusiveMaximum;
   delete properties.exclusiveMinimum;
 
-  ['$id', 'contains', 'const', 'examples'].forEach((key) => {
-    const index = keywords.indexOf(key);
+  ['$id', 'contains', 'const', 'examples'].forEach(function (key) {
+    var index = keywords.indexOf(key);
     if (index === -1) {
       return;
     }
@@ -38,11 +38,11 @@ const djvDraft04 = ({
     keywords.push('exclusiveMaximum', 'exclusiveMininum', 'id');
   }
 
-  ['contains', 'constant', 'propertyNames'].forEach((key) => {
-    const validator = validators.name[key];
+  ['contains', 'constant', 'propertyNames'].forEach(function (key) {
+    var validator = validators.name[key];
     delete validators.name[key];
 
-    const index = validators.list.indexOf(validator);
+    var index = validators.list.indexOf(validator);
     if (index === -1) {
       return;
     }
@@ -57,7 +57,7 @@ const djvDraft04 = ({
   Object.assign(keys, { id: 'id' });
   Object.assign(transformation, {
     ANY_SCHEMA: true,
-    NOT_ANY_SCHEMA: false,
+    NOT_ANY_SCHEMA: false
   });
 };
 

@@ -4,7 +4,7 @@
   "description": "JSON-Schema draft-04 plugin for djv package",
   "main": "index.js",
   "scripts": {
-    "build": "rollup -i index.js --output.file '@korzio/djv-draft-04.js' --output.format umd --name djvDraft04 -m"
+    "build": "rollup -c"
   },
   "keywords": [
     "JSON-Schema",
@@ -18,7 +18,10 @@
   "author": "korzio@gmail.com",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-uglify": "^2.0.1"
   }
 }
