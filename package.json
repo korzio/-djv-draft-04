@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "JSON-Schema draft-04 plugin for djv package",
   "main": "index.js",
+  "browser": "@korzio/djv-draft-04.js",
   "scripts": {
     "build": "rollup -c"
   },
